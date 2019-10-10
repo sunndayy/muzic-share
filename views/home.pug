@@ -1,10 +1,336 @@
 doctype html
 head
+  title Muzic - Music for everywhere
+  meta(charset='utf-8')
   meta(property='og:type' content='article')
   meta(property='og:title' content= songTitle)
   meta(property='og:description' content= songDescription)
   meta(property='og:image' content= songThumbnail)
-  meta(property='al:android:url' content='muzic://detail?id=' + id + '&title=' + title + '&channel=' + channel + '&linkThumbnail=' + linkThumbnail + '&duration=' + duration)
+  meta(property='al:android:url' content=url)
   meta(property='al:android:package' content='com.vng.muzic')
   meta(property='al:android:app_name' content='Muzic')
-h1 Muzic - Music every where
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(rel='stylesheet' href='assets/css/main.css')
+// Header
+header#header
+  h1
+    a(href='#')
+      | Muzic 
+      span Music for everywhere
+  a(href='#menu') Menu
+// Nav
+nav#menu
+  ul.links
+    li
+      a(href='/') Home
+    li
+      a(href='/') Generic
+    li
+      a(href='/') Elements
+// Banner
+//
+  To use a video as your background, set data-video to the name of your video without
+  its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
+  formats to work correctly.
+section#banner(data-video='images/banner')
+  .inner
+    header
+      h1 This is Muzic
+      p
+        | Morbi eu purus eget urna interdum dignissim sed consectetur augue
+        br
+        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;vivamus vitae libero in nulla iaculis eleifend non sit amet nulla.
+    a.button.big.alt.scrolly(href='#main') Dignissim
+// Main
+#main
+  // One
+  section.wrapper.style1
+    .inner
+      header.align-center
+        h2 Nam eu nisi non ante sodale
+        p Cras sagittis turpis sit amet est tempus, sit amet consectetur purus tincidunt.
+      // 2 Column Video Section
+      .flex.flex-2
+        .video.col
+          .image.fit
+            img(src='images/pic07.jpg' alt='')
+            .arrow
+              .icon.fa-play
+          p.caption
+            | Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+          a.link(href='/')
+            span Click Me
+        .video.col
+          .image.fit
+            img(src='images/pic08.jpg' alt='')
+            .arrow
+              .icon.fa-play
+          p.caption
+            | Morbi mattis ligula ut eros ipsum aliquam iaculis dictum suscipit
+          a.link(href='/')
+            span Click Me
+  // Two
+  section.wrapper.style2
+    .inner
+      header
+        h2 Etiam veroeros lorem
+        p Fusce fringilla enim sit amet lectus sollicitudin, eu tincidunt odio semper.
+      // Tabbed Video Section
+      .flex.flex-tabs
+        ul.tab-list
+          li
+            a.active(href='#' data-tab='tab-1') Duis vestibulum tellus
+          li
+            a(href='#' data-tab='tab-2') Quam tempus sodales ipsum
+          li
+            a(href='#' data-tab='tab-3') Donec faucibus risus cursus
+        .tabs
+          // Tab 1
+          .tab.tab-1.flex.flex-3.active
+            // Video Thumbnail
+            .video.col
+              .image.fit
+                img(src='images/pic01.jpg' alt='')
+                .arrow
+                  .icon.fa-play
+              a.link(href='/')
+                span Click Me
+            // Video Thumbnail
+            .video.col
+              .image.fit
+                img(src='images/pic02.jpg' alt='')
+                .arrow
+                  .icon.fa-play
+              a.link(href='/')
+                span Click Me
+            // Video Thumbnail
+            .video.col
+              .image.fit
+                img(src='images/pic03.jpg' alt='')
+                .arrow
+                  .icon.fa-play
+              a.link(href='/')
+                span Click Me
+            // Video Thumbnail
+            .video.col
+              .image.fit
+                img(src='images/pic04.jpg' alt='')
+                .arrow
+                  .icon.fa-play
+              a.link(href='/')
+                span Click Me
+            // Video Thumbnail
+            .video.col
+              .image.fit
+                img(src='images/pic05.jpg' alt='')
+                .arrow
+                  .icon.fa-play
+              a.link(href='/')
+                span Click Me
+            // Video Thumbnail
+            .video.col
+              .image.fit
+                img(src='images/pic06.jpg' alt='')
+                .arrow
+                  .icon.fa-play
+              a.link(href='/')
+                span Click Me
+          // Tab 2
+          .tab.tab-2.flex.flex-3
+            // Video Thumbnail
+            .video.col
+              .image.fit
+                img(src='images/pic06.jpg' alt='')
+                .arrow
+                  .icon.fa-play
+              a.link(href='/')
+                span Click Me
+            // Video Thumbnail
+            .video.col
+              .image.fit
+                img(src='images/pic05.jpg' alt='')
+                .arrow
+                  .icon.fa-play
+              a.link(href='/')
+                span Click Me
+            // Video Thumbnail
+            .video.col
+              .image.fit
+                img(src='images/pic04.jpg' alt='')
+                .arrow
+                  .icon.fa-play
+              a.link(href='/')
+                span Click Me
+            // Video Thumbnail
+            .video.col
+              .image.fit
+                img(src='images/pic03.jpg' alt='')
+                .arrow
+                  .icon.fa-play
+              a.link(href='/')
+                span Click Me
+            // Video Thumbnail
+            .video.col
+              .image.fit
+                img(src='images/pic02.jpg' alt='')
+                .arrow
+                  .icon.fa-play
+              a.link(href='/')
+                span Click Me
+            // Video Thumbnail
+            .video.col
+              .image.fit
+                img(src='images/pic01.jpg' alt='')
+                .arrow
+                  .icon.fa-play
+              a.link(href='/')
+                span Click Me
+          // Tab 3
+          .tab.tab-3.flex.flex-3
+            // Video Thumbnail
+            .video.col
+              .image.fit
+                img(src='images/pic03.jpg' alt='')
+                .arrow
+                  .icon.fa-play
+              a.link(href='/')
+                span Click Me
+            // Video Thumbnail
+            .video.col
+              .image.fit
+                img(src='images/pic02.jpg' alt='')
+                .arrow
+                  .icon.fa-play
+              a.link(href='/')
+                span Click Me
+            // Video Thumbnail
+            .video.col
+              .image.fit
+                img(src='images/pic01.jpg' alt='')
+                .arrow
+                  .icon.fa-play
+              a.link(href='/')
+                span Click Me
+            // Video Thumbnail
+            .video.col
+              .image.fit
+                img(src='images/pic06.jpg' alt='')
+                .arrow
+                  .icon.fa-play
+              a.link(href='/')
+                span Click Me
+            // Video Thumbnail
+            .video.col
+              .image.fit
+                img(src='images/pic05.jpg' alt='')
+                .arrow
+                  .icon.fa-play
+              a.link(href='/')
+                span Click Me
+            // Video Thumbnail
+            .video.col
+              .image.fit
+                img(src='images/pic04.jpg' alt='')
+                .arrow
+                  .icon.fa-play
+              a.link(href='/')
+                span Click Me
+  // Three
+  section.wrapper
+    .inner
+      header.align-center
+        h2 Aliquam ipsum purus dolor
+        p Cras sagittis turpis sit amet est tempus, sit amet consectetur purus tincidunt.
+      // 3 Column Video Section
+      .flex.flex-3
+        .video.col
+          .image.fit
+            img(src='images/pic09.jpg' alt='')
+            .arrow
+              .icon.fa-play
+          p.caption
+            | Cras eget lacus sed mauris scelerisque tincidunt
+          a.link(href='/')
+            span Click Me
+        .video.col
+          .image.fit
+            img(src='images/pic10.jpg' alt='')
+            .arrow
+              .icon.fa-play
+          p.caption
+            | Vivamus vulputate lacus non massa auctor lobortis
+          a.link(href='/')
+            span Click Me
+        .video.col
+          .image.fit
+            img(src='images/pic11.jpg' alt='')
+            .arrow
+              .icon.fa-play
+          p.caption
+            | Nam eu nisi non ante sodales interdum a vitae neque
+          a.link(href='/')
+            span Click Me
+// Footer
+footer#footer
+  .inner
+    .flex.flex-3
+      .col
+        h3 Vestibullum
+        ul.alt
+          li
+            a(href='#') Nascetur nunc varius commodo.
+          li
+            a(href='#') Vis id faucibus montes tempor
+          li
+            a(href='#') Massa amet lobortis vel.
+          li
+            a(href='#') Nascetur nunc varius commodo.
+      .col
+        h3 Lobortis
+        ul.alt
+          li
+            a(href='#') Nascetur nunc varius commodo.
+          li
+            a(href='#') Vis id faucibus montes tempor
+          li
+            a(href='#') Massa amet lobortis vel.
+          li
+            a(href='#') Nascetur nunc varius commodo.
+      .col
+        h3 Accumsan
+        ul.alt
+          li
+            a(href='#') Nascetur nunc varius commodo.
+          li
+            a(href='#') Vis id faucibus montes tempor
+          li
+            a(href='#') Massa amet lobortis vel.
+          li
+            a(href='#') Nascetur nunc varius commodo.
+  .copyright
+    ul.icons
+      li
+        a.icon.fa-twitter(href='#')
+          span.label Twitter
+      li
+        a.icon.fa-facebook(href='#')
+          span.label Facebook
+      li
+        a.icon.fa-instagram(href='#')
+          span.label Instagram
+      li
+        a.icon.fa-snapchat(href='#')
+          span.label Snapchat
+    | &#x9;&#x9;&#x9;&#x9;&#x9;&copy; Untitled. Design: 
+    a(href='https://templated.co') TEMPLATED
+    | . Images: 
+    a(href='https://unsplash.com') Coverr
+    | . Video: 
+    a(href='https://coverr.co') Coverr
+    | .
+// Scripts
+script(src='assets/js/jquery.min.js')
+script(src='assets/js/jquery.scrolly.min.js')
+script(src='assets/js/skel.min.js')
+script(src='assets/js/util.js')
+script(src='assets/js/main.js')

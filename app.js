@@ -6,6 +6,7 @@ const api = "https://www.googleapis.com/youtube/v3/videos?part=snippet%2Ccontent
 
 app.set('view engine', 'pug')
 app.set('views', './views')
+app.use(express.static('public'))
 
 app.get('/songs', (req, res) => {
   request.get({
@@ -14,22 +15,26 @@ app.get('/songs', (req, res) => {
       'Content-Type': 'application/json'
     }
   }, (error, response, body) => {
-    if (response.statusCode == 200) {
-      const jsonBody = JSON.parse(body).items[0]
-      res.render('home', {
-        songTitle: jsonBody.snippet.title + ' - ' + jsonBody.snippet.channelTitle,
-        songDescription: jsonBody.snippet.description,
-        songThumbnail: jsonBody.snippet.thumbnails.high.url,
-        id : jsonBody.id,
-        title: jsonBody.snippet.title,
-        channel: jsonBody.snippet.channelTitle,
-        linkThumbnail: jsonBody.snippet.thumbnails.medium.url,
-        duration: jsonBody.contentDetails.duration
-      })
+    if (response) {
+      if (response.statusCode == 200) {
+        const jsonBody = JSON.parse(body).items[0]
+        res.render('home', {
+          songTitle: jsonBody.snippet.title + ' - ' + jsonBody.snippet.channelTitle,
+          songDescription: jsonBody.snippet.description,
+          songThumbnail: jsonBody.snippet.thumbnails.high.url,
+          url: encodeURI('muzic://detail?id=' + jsonBody.id + '&title=' + jsonBody.snippet.title + '&channel=' + jsonBody.snippet.channelTitle + '&linkThumbnail=' + jsonBody.snippet.thumbnails.medium.url + '&duration=' + jsonBody.contentDetails.duration)
+        })
+      } else {
+        res.redirect('https://play.google.com/store/apps/details?id=vn.com.vng.zalopay')
+      }
     } else {
-      res.send('Muzic - Music every where')
+      res.redirect('https://play.google.com/store/apps/details?id=vn.com.vng.zalopay')
     }
   })
 })
 
-app.listen(process.env.PORT || 3000)
+app.get('/', (req, res) => {
+  res.redirect('https://play.google.com/store/apps/details?id=vn.com.vng.zalopay')
+})
+
+app.listen(process.env.PORT || 10000)
