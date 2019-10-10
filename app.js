@@ -16,14 +16,13 @@ app.get('/songs/:id', (req, res) => {
   }, (error, response, body) => {
     if (response.statusCode == 200) {
       const jsonBody = JSON.parse(body).items[0]
-      res.render('index', {
-        songTitle: jsonBody.snippet.title + jsonBody.snippet.channelTitle,
+      res.render('home', {
+        songTitle: jsonBody.snippet.title + ' - ' + jsonBody.snippet.channelTitle,
         songDescription: jsonBody.snippet.description,
         songThumbnail: jsonBody.snippet.thumbnails.high.url
       })
     } else {
-      console.log(error)
-      res.send("Muzic - Music every where")
+      res.send('Muzic - Music every where')
     }
   })
 })
