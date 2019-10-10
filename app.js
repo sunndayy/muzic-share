@@ -7,9 +7,9 @@ const api = "https://www.googleapis.com/youtube/v3/videos?part=snippet&key=AIzaS
 app.set('view engine', 'pug')
 app.set('views', './views')
 
-app.get('/songs/:id', (req, res) => {
+app.get('/songs', (req, res) => {
   request.get({
-    url: api + req.params.id,
+    url: api + req.query.id,
     headers: {
       'Content-Type': 'application/json'
     }
