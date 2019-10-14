@@ -25,16 +25,25 @@ app.get('/songs', (req, res) => {
           url: encodeURI('muzic://detail?id=' + jsonBody.id + '&title=' + jsonBody.snippet.title + '&channel=' + jsonBody.snippet.channelTitle + '&linkThumbnail=' + jsonBody.snippet.thumbnails.medium.url + '&duration=' + jsonBody.contentDetails.duration)
         })
       } else {
-        res.redirect('https://play.google.com/store/apps/details?id=vn.com.vng.zalopay')
+        // res.redirect('https://play.google.com/store/apps/details?id=vn.com.vng.zalopay')
       }
     } else {
-      res.redirect('https://play.google.com/store/apps/details?id=vn.com.vng.zalopay')
+      // res.redirect('https://play.google.com/store/apps/details?id=vn.com.vng.zalopay')
     }
   })
 })
 
 app.get('/', (req, res) => {
-  res.redirect('https://play.google.com/store/apps/details?id=vn.com.vng.zalopay')
+  // res.redirect('https://play.google.com/store/apps/details?id=vn.com.vng.zalopay')
 })
 
 app.listen(process.env.PORT || 10000)
+
+var admin = require("firebase-admin");
+
+var serviceAccount = require("/home/lap10930/AndroidStudioProjects/muzic-share/muzic-249604-firebase-adminsdk-2gink-f18f408a28.json");
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://muzic-249604.firebaseio.com"
+});
